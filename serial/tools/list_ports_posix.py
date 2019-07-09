@@ -32,7 +32,7 @@ if plat[:5] == 'linux':    # Linux (confirmed)  # noqa
 elif plat[:6] == 'darwin':   # OS X (confirmed)
     from serial.tools.list_ports_osx import comports
 
-elif plat == 'cygwin':       # cygwin/win32
+elif plat == 'cygwin' or plat == 'msys': # cygwin/win32/msys2
     # cygwin accepts /dev/com* in many contexts
     # (such as 'open' call, explicit 'ls'), but 'glob.glob'
     # and bare 'ls' do not; so use /dev/ttyS* instead
